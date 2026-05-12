@@ -68,13 +68,13 @@ public class FormInteractionPage {
     }
 
 
-// ================= LOCATORS =================
+
 
     By simpleDropdown = By.id("dropdown");
     By pageSizeDropdown = By.id("elementsPerPageSelect");
     By countryDropdown = By.id("country"); // may exist on same page or another section
 
-    // ================= SIMPLE DROPDOWN =================
+    // DROPDOWN
 
     public void selectSimple(String option) {
         Select select = new Select(driver.findElement(simpleDropdown));
@@ -87,8 +87,6 @@ public class FormInteractionPage {
                 .getText();
     }
 
-    // ================= ELEMENTS PER PAGE =================
-
     public void selectPageSize(String value) {
         Select select = new Select(driver.findElement(pageSizeDropdown));
         select.selectByVisibleText(value);
@@ -99,8 +97,6 @@ public class FormInteractionPage {
                 .getFirstSelectedOption()
                 .getText();
     }
-
-    // ================= COUNTRY DROPDOWN =================
 
     public void selectCountry(String country) {
         Select select = new Select(driver.findElement(countryDropdown));
@@ -122,7 +118,7 @@ public class FormInteractionPage {
     By checkbox1 = By.id("checkbox1");
     By checkbox2 = By.id("checkbox2");
 
-    // SAFE CLICK METHOD (IMPORTANT)
+    // SAFE CLICK METHOD
     public void clickSafe(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 

@@ -15,8 +15,6 @@ public class FormInteractionBaseTest {
         driver = new ChromeDriver();
         driver.manage().window();
 
-
-        // ✅ THIS WAS MISSING (MAIN FIX)
         page = new FormInteractionPage(driver);
     }
 

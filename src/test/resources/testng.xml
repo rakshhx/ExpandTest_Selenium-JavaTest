@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Full Test Suite">
+
+    <test name="All Tests">
+        <classes>
+            <class name="com.krce.tests.LoginTest"/>
+            <class name="com.krce.tests.AlertsTest"/>
+            <class name="com.krce.tests.FormInteractionTest"/>
+            <class name="com.krce.tests.FormValidationTest"/>
+            <class name="com.krce.tests.NotesTest"/>
+        </classes>
+    </test>
+
+</suite>

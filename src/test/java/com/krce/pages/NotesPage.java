@@ -18,13 +18,11 @@ public class NotesPage {
         this.wait = wait;
     }
 
-    // Locators (IMPORTANT: DO NOT CACHE ELEMENTS)
     private final By createBtn = By.cssSelector("[data-testid='note-create']");
     private final By titleInput = By.id("note-title");
     private final By descInput = By.id("note-description");
     private final By saveBtn = By.cssSelector("[data-testid='note-submit']");
 
-    // ---------- CREATE NOTE ----------
     public void createNote(String category, boolean flag, String title, String desc) {
 
         wait.until(ExpectedConditions.elementToBeClickable(createBtn)).click();
@@ -34,11 +32,9 @@ public class NotesPage {
 
         driver.findElement(saveBtn).click();
 
-        // wait for UI refresh
         wait.until(ExpectedConditions.invisibilityOfElementLocated(saveBtn));
     }
 
-    // ---------- EDIT NOTE (FIXED STALE ELEMENT ISSUE) ----------
     public void editNote(String oldTitle, String newTitle, String newDesc) {
 
         By noteCard = By.xpath("//div[contains(@class,'card-header') and normalize-space()='" + oldTitle + "']");
@@ -64,7 +60,6 @@ public class NotesPage {
         wait.until(ExpectedConditions.textToBePresentInElementLocated(noteCard, newTitle));
     }
 
-    // ---------- VERIFY ----------
     public boolean isNoteDisplayed(String title) {
 
         By note = By.xpath("//div[contains(@class,'card-header') and normalize-space()='" + title + "']");
