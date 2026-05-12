@@ -16,7 +16,6 @@ public class BaseTest {
     protected WebDriverWait wait;
     protected Actions actions;
 
-
     @BeforeMethod
     public void setUp(){
         driver = new ChromeDriver();
